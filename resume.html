@@ -18,6 +18,106 @@ body {
     display: flex;
     justify-content: center;
     padding: 40px;
+}
+
+/* 主版面：左右切 */
+.resume {
+    width: 1000px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* 左側 */
+.header {
+    grid-column: 1;
+    grid-row: 1 / span 10;
+    background: linear-gradient(180deg, #4e73df, #1cc88a);
+    color: white;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+/* 照片 */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    border: 4px solid white;
+}
+
+/* 名字 */
+.header-text h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.header-text p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* 右側內容 */
+.section {
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+}
+
+/* 標題 */
+.section h2 {
+    color: #4e73df;
+    margin-bottom: 10px;
+}
+
+/* 個資 */
+.info-list li {
+    margin: 6px 0;
+}
+
+/* 技能條 */
+.bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.bar div {
+    height: 100%;
+    width: 0;
+    background: #4e73df;
+    border-radius: 5px;
+    transition: 1.5s;
+}
+
+/* 按鈕 */
+.btn {
+    margin: 20px 30px;
+    background: #4e73df;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2e59d9;
+}
+
+/* footer */
+footer {
+    grid-column: 1 / span 2;
+    text-align: center;
+    padding: 15px;
+    background: #f1f1f1;
+}
 </style>
 </head>
 
