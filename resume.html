@@ -3,141 +3,324 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>洪明仕｜個人履歷</title>
-
+<title>五條悟｜最強咒術師履歷</title>
+<!-- 引入 Google Fonts - Noto Sans TC 提供中文支援, Oswald 提供標題氣勢 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 <style>
+/* 全局重置與基礎字體 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Microsoft JhengHei", sans-serif;
 }
-
 body {
-    background: #f5f7fb;
+    background: #121212; /* 深色背景，模擬夜晚或詛咒空間 */
     display: flex;
     justify-content: center;
-    padding: 40px;
+    align-items: center; /* 垂直置中 */
+    min-height: 100vh; /* 確保至少佔滿視窗高度 */
+    padding: 40px 20px; /* 增加邊距 */
+    font-family: 'Noto Sans TC', sans-serif; /* 更改為Noto Sans TC */
+    color: #e0e0e0; /* 淺灰色字體，在深色背景上更清晰 */
 }
 
 /* 主版面：左右切 */
 .resume {
-    width: 1000px;
+    width: 100%;
+    max-width: 1100px; /* 增加最大寬度 */
     display: grid;
-    grid-template-columns: 300px 1fr;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    grid-template-columns: 350px 1fr; /* 左側寬度調整 */
+    background: #1c1c1c; /* 履歷卡片深灰色背景 */
+    border-radius: 15px; /* 圓角 */
+    overflow: hidden; /* 確保內容不溢出 */
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.4); /* 五條悟的藍色光芒陰影 */
+    border: 1px solid rgba(0, 191, 255, 0.2); /* 微妙的藍色邊框 */
+    animation: fadeIn 1.5s ease-out; /* 淡入動畫 */
 }
 
-/* 左側 */
+/* 淡入動畫 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 左側 Header */
 .header {
     grid-column: 1;
     grid-row: 1 / span 10;
-    background: linear-gradient(180deg, #4e73df, #1cc88a);
-    color: white;
+    background: linear-gradient(145deg, #0d1a2b 0%, #001f3f 100%); /* 深藍色漸變，更具神秘感 */
+    color: #e0f7fa; /* 淺藍色文字 */
+    display: flex; /* 改變為flex佈局以便垂直居中內容 */
     flex-direction: column;
     justify-content: center;
+    align-items: center; /* 水平居中 */
     text-align: center;
     padding: 30px 20px;
+    border-right: 2px solid rgba(0, 191, 255, 0.3); /* 與右側內容的分隔線 */
+    position: relative; /* 用於背景裝飾 */
+}
+
+/* 左側背景紋理 */
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48ZyBmaWxsPSIjMDcwODFGIiBmaWxsLW9wYWNpdHk9IjAuMiI+PHBhdGggZD0iTTcwIDIwMGw3MC01MHY1MEg3MHpNMTQwIDcwdi03MGg2MHY3MGgtNjBaTTE0MCAwTDcwIDcwbDcwIDUwVjBoNzBaTTEwMCAwTDMwIDcwTDIwMCA3MFYwSDEwMFoiLz48L2c+PC9nPjwvc3ZnPg=='); /* 抽象紋理 */
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.header > * { /* 確保內容在紋理之上 */
+    position: relative;
+    z-index: 1;
 }
 
 /* 照片 */
 .profile-img {
-    width: 120px;
-    height: 120px;
+    width: 160px; /* 增大照片尺寸 */
+    height: 160px;
     border-radius: 50%;
-    margin: 0 auto 15px;
-    border: 4px solid white;
+    margin: 0 auto 25px; /* 增加下方間距 */
+    border: 6px solid #00bfff; /* 五條悟的藍色眼睛邊框 */
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.7); /* 藍色光暈效果 */
+    object-fit: cover; /* 確保圖片不變形 */
+    animation: pulseGlow 2s infinite alternate; /* 光暈脈動動畫 */
+}
+
+@keyframes pulseGlow {
+    from { box-shadow: 0 0 15px rgba(0, 191, 255, 0.5); }
+    to { box-shadow: 0 0 35px rgba(0, 191, 255, 0.9); }
 }
 
 /* 名字 */
 .header-text h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-family: 'Oswald', sans-serif; /* 標題字體 */
+    font-size: 38px; /* 增大字體 */
+    margin-bottom: 8px;
+    letter-spacing: 2px; /* 增加字母間距 */
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6); /* 名字的微光效果 */
 }
-
 .header-text p {
-    font-size: 14px;
-    opacity: 0.9;
+    font-size: 16px;
+    opacity: 0.85;
+    line-height: 1.6;
+    color: #a0d8f0; /* 淺藍色 */
 }
 
-/* 右側內容 */
+/* 音樂播放器樣式 */
+audio {
+    width: 80%; /* 寬度調整 */
+    margin-top: 25px;
+    filter: invert(1) hue-rotate(180deg) saturate(2); /* 將播放器顏色反轉並染成藍色調 */
+}
+audio::-webkit-media-controls-panel {
+    background-color: rgba(0, 191, 255, 0.1);
+    color: #00bfff;
+}
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #00bfff;
+}
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    color: #00bfff;
+}
+/* Firefox 兼容性 */
+audio::-moz-range-track {
+    background: rgba(0, 191, 255, 0.1);
+}
+audio::-moz-range-thumb {
+    background: #00bfff;
+}
+audio::-moz-media-controls-panel {
+    background-color: rgba(0, 191, 255, 0.1);
+}
+
+/* 右側內容區塊 */
 .section {
-    padding: 20px 30px;
-    border-bottom: 1px solid #eee;
+    padding: 30px 40px; /* 增加內邊距 */
+    border-bottom: 1px dashed #333; /* 虛線分隔 */
+    position: relative; /* 用於可能的背景裝飾 */
+}
+.section:last-of-type { /* 最後一個區塊沒有下邊框 */
+    border-bottom: none;
 }
 
-/* 標題 */
+/* 區塊標題 */
 .section h2 {
-    color: #4e73df;
-    margin-bottom: 10px;
+    font-family: 'Oswald', sans-serif; /* 標題字體 */
+    color: #00bfff; /* 電光藍 */
+    font-size: 26px; /* 增大字體 */
+    margin-bottom: 15px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase; /* 大寫 */
+    border-bottom: 2px solid #00bfff; /* 下劃線 */
+    padding-bottom: 5px;
+    position: relative;
+    display: inline-block; /* 讓下劃線只跟隨文字長度 */
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.4); /* 標題微光 */
+}
+/* 標題左側咒術符號裝飾 */
+.section h2::before {
+    content: '✦'; /* 使用一個符號作為裝飾 */
+    color: #00bfff;
+    margin-right: 10px;
+    font-size: 20px;
+    vertical-align: middle;
 }
 
-/* 個資 */
+/* 個人資料與經歷列表 */
+.info-list {
+    list-style: none; /* 移除預設列表符號 */
+    padding-left: 0;
+}
 .info-list li {
-    margin: 6px 0;
+    margin: 10px 0;
+    position: relative;
+    padding-left: 25px; /* 為自定義符號留空間 */
+    line-height: 1.8;
+}
+.info-list li::before {
+    content: '➜'; /* 自定義列表符號 */
+    color: #00bfff;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* 自我介紹內文 */
+.section p {
+    line-height: 1.8;
+    margin-bottom: 10px;
+    color: #c0c0c0; /* 比主體文字稍深的灰色 */
 }
 
 /* 技能條 */
-.bar {
-    height: 8px;
-    background: #eee;
-    border-radius: 5px;
-    margin-bottom: 10px;
+.bar-container {
+    margin-bottom: 15px;
 }
-
+.skill-name {
+    font-weight: bold;
+    color: #00bfff;
+    margin-bottom: 5px;
+    display: block;
+}
+.bar {
+    height: 10px; /* 增大高度 */
+    background: #333; /* 深色背景條 */
+    border-radius: 5px;
+    overflow: hidden; /* 確保進度條不溢出 */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5); /* 內陰影 */
+}
 .bar div {
     height: 100%;
-    width: 0;
-    background: #4e73df;
+    width: 0; /* 初始寬度為0，用於動畫 */
+    background: linear-gradient(90deg, #00bfff, #00e5ff); /* 藍色漸變填充 */
     border-radius: 5px;
-    transition: 1.5s;
+    transition: width 1.5s ease-out, box-shadow 0.5s ease-in-out; /* 平滑過渡動畫 */
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.6); /* 藍色光暈 */
+}
+.bar:hover div { /* 鼠標懸停時光暈更強烈 */
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.9);
 }
 
 /* 按鈕 */
 .btn {
-    margin: 20px 30px;
-    background: #4e73df;
-    color: white;
-    padding: 12px;
+    grid-column: 1 / span 2; /* 讓按鈕跨越兩欄 */
+    margin: 30px 40px; /* 調整邊距 */
+    background: linear-gradient(90deg, #00bfff, #007bff); /* 電光藍漸變 */
+    color: #1a1a1a; /* 深色文字，高對比 */
+    padding: 15px 30px; /* 增大按鈕 */
     text-align: center;
     border-radius: 8px;
     cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5); /* 藍色光暈 */
+    border: none; /* 移除預設邊框 */
+    text-transform: uppercase; /* 大寫 */
 }
-
 .btn:hover {
-    background: #2e59d9;
+    background: linear-gradient(90deg, #00e5ff, #0056b3); /* 懸停時顏色變化 */
+    box-shadow: 0 0 35px rgba(0, 229, 255, 0.8); /* 懸停時光暈更強 */
+    transform: translateY(-3px); /* 微妙上浮效果 */
 }
 
-/* footer */
+/* Footer */
 footer {
     grid-column: 1 / span 2;
     text-align: center;
-    padding: 15px;
-    background: #f1f1f1;
+    padding: 20px;
+    background: #0a0a0a; /* 更深的背景 */
+    color: #666; /* 較暗的文字 */
+    font-size: 14px;
+    border-top: 1px solid #222; /* 頂部邊框 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .resume {
+        grid-template-columns: 1fr; /* 小螢幕下變為單欄佈局 */
+        width: 95%; /* 佔用更多寬度 */
+        margin: 20px 0;
+    }
+    .header {
+        grid-column: 1;
+        grid-row: auto; /* 自動佈局 */
+        border-right: none; /* 移除邊框 */
+        border-bottom: 2px solid rgba(0, 191, 255, 0.3); /* 改為底部邊框 */
+    }
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
+    .header-text h1 {
+        font-size: 32px;
+    }
+    .header-text p {
+        font-size: 15px;
+    }
+    .section {
+        padding: 25px 25px;
+    }
+    .section h2 {
+        font-size: 22px;
+    }
+    .btn {
+        margin: 25px;
+        font-size: 16px;
+        padding: 12px 25px;
+    }
+    audio {
+        width: 95%;
+    }
 }
 </style>
 </head>
-
 <body>
-
 <div class="resume">
-
-    <!-- Header（照片） -->
+    <!-- Header（照片、姓名、職稱、音頻） -->
     <div class="header">
-        <img src="images/photo.jfif" class="profile-img">
+        <!-- 確保 photo.jfif 是您 Gojo 的圖片路徑 -->
+        <img src="images/photo.jfif" class="profile-img" alt="五條悟個人照片">
         <div class="header-text">
             <h1>五條 悟</h1>
-            <p>東京都立咒術高專 學生</p>
-            </audio>
-
-<audio controls>
-  <source src="mp3/網頁背景主題曲.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
+            <p>東京都立咒術高專 班主任<br>特級咒術師</p>
         </div>
+        <!-- 將 audio 移到 header-text 外部，與其他內容平行 -->
+        <audio controls id="bgm-player">
+            <source src="mp3/網頁背景主題曲.mp3" type="audio/mpeg">
+            您的瀏覽器不支援音頻播放。
+        </audio>
     </div>
+
     <!-- 個人資料 -->
     <div class="section">
         <h2>個人資料</h2>
@@ -151,22 +334,25 @@ Your browser does not support the audio element.
     <!-- 自我介紹 -->
     <div class="section">
         <h2>自我介紹</h2>
-        </P>日常言行輕浮、喜歡損人，自己也承認“性格很壞”，並經常刻意激怒對手。
-        表面上是個吊兒郎當、愛玩愛鬧的超級問題人物，但內里擁有極強的責任感與理想。</p>
+        <p>日常言行輕浮、喜歡損人，自己也承認“性格很壞”，並經常刻意激怒對手。</p>
+        <p>表面上是個吊兒郎當、愛玩愛鬧的超級問題人物，但內里擁有極強的責任感與理想。</p>
     </div>
 
-    <!-- 技能 -->
+    <!-- 技能專長 -->
     <div class="section">
         <h2>技能專長</h2>
-
-        <p>領域展開：無量空處</p>
-        <div class="bar"><div data-width="100%"></div></div>
-
-        <p>術式順轉「蒼」、術式反轉「赫」、虛式「茈」</p>
-        <div class="bar"><div data-width="90%"></div></div>
-
-        <p>反轉術式</p>
-        <div class="bar"><div data-width="85%"></div></div>
+        <div class="bar-container">
+            <span class="skill-name">領域展開：無量空處</span>
+            <div class="bar"><div data-width="100%"></div></div>
+        </div>
+        <div class="bar-container">
+            <span class="skill-name">術式順轉「蒼」、術式反轉「赫」、虛式「茈」</span>
+            <div class="bar"><div data-width="95%"></div></div> <!-- 調整為95% -->
+        </div>
+        <div class="bar-container">
+            <span class="skill-name">反轉術式</span>
+            <div class="bar"><div data-width="90%"></div></div> <!-- 調整為90% -->
+        </div>
     </div>
 
     <!-- 經歷 -->
@@ -180,10 +366,11 @@ Your browser does not support the audio element.
     </div>
 
     <!-- 按鈕 -->
-    <div class="btn" onclick="downloadPDF()">下載PDF</div>
+    <button class="btn" onclick="downloadPDF()">下載咒術檔案</button>
 
-    <footer>© 2026 洪明仕</footer>
-
+    <footer>
+        <p>© 2026 洪明仕｜咒術迴戰同人設計</p>
+    </footer>
 </div>
 
 <script>
@@ -192,31 +379,24 @@ window.onload = () => {
     document.querySelectorAll(".bar div").forEach(el => {
         el.style.width = el.dataset.width;
     });
+
+    // 嘗試自動播放背景音樂
+    const audio = document.getElementById("bgm-player");
+    // 瀏覽器通常會阻止沒有用戶互動的自動播放。
+    // 這是一個常見的解決方法，讓使用者在互動後播放，或者嘗試靜音播放。
+    audio.play().catch(e => {
+        console.log("Audio autoplay was prevented. User interaction required.", e);
+        // 可以提示用戶點擊播放，或者嘗試靜音播放
+        // audio.muted = true;
+        // audio.play();
+    });
 };
 
-// 下載
+// 下載功能 (已修改按鈕文字)
 function downloadPDF() {
-    alert("請按 Ctrl + P → 另存為 PDF");
+    alert("請按 Ctrl + P (或 Cmd + P) → 選擇『另存為 PDF』");
     window.print();
 }
-</script>
-<audio id="bgm" autoplay loop playsinline>
-  <source src="mp3/網頁背景主題曲.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-  const audio = document.getElementById("bgm");
-
-  // 嘗試直接播放
-  audio.play().catch(() => {
-    // 若被擋，快速解除靜音再播放
-    audio.muted = true;
-    audio.play();
-
-    setTimeout(() => {
-      audio.muted = false;
-    }, 100);
-  });
 </script>
 </body>
 </html>
